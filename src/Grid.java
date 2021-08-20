@@ -9,5 +9,13 @@ public class Grid {
         }
     private void initialiseGrid(){
         mineGrid = new CellGenerator [length] [width];
+
+        for (int i = 0; i<length; i++)
+        {
+           for (int j = 0; j<width; j++)
+           {
+               mineGrid [i][j] = new CellGenerator(i,j);
+           }
+        }
     }
 }
