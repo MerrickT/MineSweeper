@@ -1,20 +1,20 @@
 public class Grid {
     private int length;
     private int width;
-    private CellGenerator[][] mineGrid;
+    private Cell[][] mineGrid;
+
 
     public Grid (int length, int width){
         this.length = length;
         this.width = width;
         }
     private void initialiseGrid(){
-        mineGrid = new CellGenerator [length] [width];
+        mineGrid = new Cell [length] [width];
 
-        for (int i = 0; i<length; i++)
+        for (int x = 0; x<length; x++)
         {
-           for (int j = 0; j<width; j++)
-           {
-               mineGrid [i][j] = new CellGenerator(i,j);
+           for (int y = 0; y<width; y++) {
+               mineGrid[x][y] = new Cell();
            }
         }
     }
