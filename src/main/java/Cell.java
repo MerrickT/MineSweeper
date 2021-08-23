@@ -23,8 +23,17 @@ public class Cell {
     {
     }
 
-    /*public Cell() {
-    }*/
+    public String toString()
+    {
+        if (Cell.getIsBomb() && Cell.getUncovered())
+        {
+            return ("X");
+        }
+        else
+        {
+            return ("O");
+        }
+    }
 
     // Generates the Cell Object
 
