@@ -1,17 +1,28 @@
 public class Cell {
 // Generates the Values for the Cell Object
 
+
     static boolean isBomb = false;
     int surroundingBombs = 0;
     static boolean uncovered = false;
 
-    public static boolean isBomb()
+    public static boolean getIsBomb()
     {
         return isBomb;
     }
-    public static boolean uncovered()
+    public static void setIsBomb(boolean isBomb)
+    {
+        Cell.isBomb = isBomb;
+    }
+
+    public static boolean getUncovered()
     {
         return uncovered;
+    }
+
+    public static void setUncovered(boolean uncovered)
+    {
+        Cell.uncovered = uncovered;
     }
 
     public Cell() {
