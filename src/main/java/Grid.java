@@ -4,12 +4,12 @@ public abstract class Grid {
     private Cell[][] mineGrid;
 
 
-    public Grid(int length, int width) {
+    protected Grid(int length, int width) {
         this.length = length;
         this.width = width;
     }
 
-    private void initialiseGrid() {
+    public void initialiseGrid() {
         mineGrid = new Cell[length][width];
 
         for (int x = 0; x < length; x++) {
