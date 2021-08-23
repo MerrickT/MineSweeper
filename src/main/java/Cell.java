@@ -12,7 +12,6 @@ public class Cell {
     }
     public static void setIsBomb()
     {
-        Cell.isBomb = isBomb;
     }
 
     public static boolean getUncovered()
@@ -22,11 +21,10 @@ public class Cell {
 
     public static void setUncovered()
     {
-        Cell.uncovered = uncovered;
     }
 
-    public Cell() {
-    }
+    /*public Cell() {
+    }*/
 
     // Generates the Cell Object
 
