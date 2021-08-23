@@ -10,7 +10,7 @@ public class Cell {
     {
         return isBomb;
     }
-    public static void setIsBomb(boolean isBomb)
+    public static void setIsBomb()
     {
         Cell.isBomb = isBomb;
     }
@@ -20,7 +20,7 @@ public class Cell {
         return uncovered;
     }
 
-    public static void setUncovered(boolean uncovered)
+    public static void setUncovered()
     {
         Cell.uncovered = uncovered;
     }

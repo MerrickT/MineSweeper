@@ -1,4 +1,4 @@
-public abstract class Grid ( ) {
+public abstract class Grid{
     private int length;
     private int width;
     private Cell[][] mineGrid;
@@ -22,15 +22,15 @@ public abstract class Grid ( ) {
         }
 
     }
-    public abstract String toString();
+    public String toString()
     {
-        if (Cell.isBomb() && Cell.uncovered())
+        if (Cell.getIsBomb() && Cell.getUncovered())
         {
-            return("X");
+            return ("X");
         }
-        if (!Cell.isBomb() && Cell.uncovered())
+        else
         {
-            return("O");
+            return ("O");
         }
     }
 }
