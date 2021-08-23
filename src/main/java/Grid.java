@@ -22,7 +22,6 @@ public abstract class Grid {
         }
 
     }
-
     public abstract String toString();
     {
         if (Cell.isBomb() && Cell.uncovered());

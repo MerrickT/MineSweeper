@@ -5,10 +5,12 @@ public class Cell {
     int surroundingBombs = 0;
     static boolean uncovered = false;
 
-    public static boolean isBomb() {
+    public static boolean isBomb()
+    {
         return isBomb;
     }
-    public static boolean uncovered() {
+    public static boolean uncovered()
+    {
         return uncovered;
     }
 
@@ -21,4 +23,5 @@ public class Cell {
     {
         Cell cell = new Cell();
     }
+
 }
