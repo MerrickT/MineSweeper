@@ -1,10 +1,9 @@
 package minesweeper;
 
 public class Grid {
-    private final int length;
-    private final int width;
-    private final Cell[][] mineGrid;
-
+    private int length;
+    private int width;
+    private Cell[][] mineGrid;
 
     public Grid(int length, int width)
     {
@@ -50,6 +49,19 @@ public class Grid {
             sb.append("\n");
         }
         return sb.toString();
+    }
+    public void placeBombs()
+    {
+        for (int i = 0; i < 16; i++)
+        {
+            int column = (int) (Math.random() * 9) + 1;
+            System.out.println("column" + column);
+            int row = (int) (Math.random() * 9) + 1;
+            System.out.println("row" + row);
+
+            Grid.getCell(column, row).setIsBomb();
+            //bombPlacingGrid.setCell(column, row, bombPlacingGrid.getCell(column, row).);
+        }
     }
 }
 

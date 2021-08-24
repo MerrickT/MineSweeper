@@ -40,7 +40,8 @@ public class Cell {
         if (isBomb && uncovered)
         {
             return ("X");
-        } else if (!isBomb && uncovered) {
+        } else if (!isBomb && uncovered)
+        {
             return ("O");
         } else {
             return (".");
