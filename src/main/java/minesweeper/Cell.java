@@ -1,3 +1,5 @@
+package minesweeper;
+
 public class Cell {
 // Generates the Values for the Cell Object
 
@@ -27,14 +29,19 @@ public class Cell {
 
     public String toString()
     {
-        if (Cell.getIsBomb() && Cell.getUncovered())
+        if (isBomb && uncovered)
         {
             return ("X");
         }
-        else
+        else if (!isBomb && uncovered)
         {
             return ("O");
         }
+        else
+        {
+            return (".");
+        }
+
     }
 
     // Generates the Cell Object

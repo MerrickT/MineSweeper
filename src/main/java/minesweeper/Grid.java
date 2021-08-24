@@ -1,24 +1,30 @@
-public abstract class Grid {
-    private int length;
-    private int width;
-    private Cell[][] mineGrid;
+package minesweeper;
+
+public class Grid {
+    private final int length;
+    private final int width;
+    private final Cell[][] mineGrid;
 
 
     protected Grid(int length, int width) {
         this.length = length;
         this.width = width;
-    }
 
-    public void initialiseGrid() {
         mineGrid = new Cell[length][width];
 
-        for (int x = 0; x < length; x++) {
-            for (int y = 0; y < width; y++) {
+        initialiseGrid();
+    }
+
+    public void initialiseGrid()
+    {
+
+        for (int x = 0; x < length; x++)
+        {
+            for (int y = 0; y < width; y++)
+            {
                 mineGrid[x][y] = new Cell();
             }
-
         }
-
     }
 
     public String toString() {
