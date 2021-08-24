@@ -5,50 +5,47 @@ public class Cell {
 
 
     static boolean isBomb = false;
-    int surroundingBombs = 0;
-    static boolean uncovered = false;
+    static int surroundingBombs = 0;
+    static boolean uncovered = true;
 
-    public static boolean getIsBomb()
+    public boolean getIsBomb()
     {
         return isBomb;
     }
-    public static void setIsBomb()
+    public void setIsBomb()
     {
-        // Generating isBomb Set
+        isBomb = true;
     }
 
-    public static boolean getUncovered()
+    public boolean getUncovered()
     {
         return uncovered;
     }
 
-    public static void setUncovered()
+    public void setUncovered()
     {
-        // Generating uncovered Set
+        uncovered = true;
     }
 
+
+
+    // Generates the Cell Object
+
+    //public void main(String[] args)
+    //{
+      //  Cell cell = new Cell();
+    //}
     public String toString()
     {
         if (isBomb && uncovered)
         {
             return ("X");
-        }
-        else if (!isBomb && uncovered)
-        {
+        } else if (!isBomb && uncovered) {
             return ("O");
-        }
-        else
-        {
+        } else {
             return (".");
         }
 
-    }
-
-    // Generates the Cell Object
-
-    public void main(String[] args)
-    {
-        Cell cell = new Cell();
     }
 
 }

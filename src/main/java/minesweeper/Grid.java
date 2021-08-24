@@ -6,7 +6,8 @@ public class Grid {
     private final Cell[][] mineGrid;
 
 
-    protected Grid(int length, int width) {
+    public Grid(int length, int width)
+    {
         this.length = length;
         this.width = width;
 
@@ -15,7 +16,17 @@ public class Grid {
         initialiseGrid();
     }
 
-    public void initialiseGrid()
+    public Cell getCell(int length, int width)
+    {
+        return this.mineGrid[length] [width];
+    }
+
+    public void setCell(int length, int width, Cell tile)
+    {
+        this.mineGrid [length] [width] = tile;
+    }
+
+    private void initialiseGrid()
     {
 
         for (int x = 0; x < length; x++)
