@@ -59,7 +59,6 @@ public class Grid {
             int row = (int) (Math.random() * 9) + 1;
             System.out.println("row" + row);
 
-            Grid.getCell(column, row).setIsBomb();
             //bombPlacingGrid.setCell(column, row, bombPlacingGrid.getCell(column, row).);
         }
     }
