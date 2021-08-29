@@ -4,17 +4,17 @@ public class Cell {
 // Generates the Values for the Cell Object
 
 
-    static boolean isBomb = false;
-    static int surroundingBombs = 0;
-    static boolean uncovered = true;
+    boolean isBomb = false;
+    int surroundingBombs = 0;
+    boolean uncovered = true;
 
     public boolean getIsBomb()
     {
         return isBomb;
     }
-    public void setIsBomb()
+    public void setIsBomb(boolean value)
     {
-        isBomb = true;
+        this.isBomb = value;
     }
 
     public boolean getUncovered()
@@ -27,14 +27,6 @@ public class Cell {
         uncovered = true;
     }
 
-
-
-    // Generates the Cell Object
-
-    //public void main(String[] args)
-    //{
-      //  Cell cell = new Cell();
-    //}
     public String toString()
     {
         if (isBomb && uncovered)
@@ -42,7 +34,7 @@ public class Cell {
             return ("X");
         } else if (!isBomb && uncovered)
         {
-            return ("O");
+            return (Integer.toString(this.surroundingBombs));
         } else {
             return (".");
         }

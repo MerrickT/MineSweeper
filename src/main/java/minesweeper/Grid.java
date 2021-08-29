@@ -13,6 +13,8 @@ public class Grid {
         mineGrid = new Cell[length][width];
 
         initialiseGrid();
+        this.placeBombs();
+        this.countThroughGrid();
     }
 
     public Cell getCell(int length, int width)
@@ -20,14 +22,13 @@ public class Grid {
         return this.mineGrid[length] [width];
     }
 
-    public void setCell(int length, int width, Cell tile)
+    public void setCell(int length, int width)
     {
-        this.mineGrid [length] [width] = tile;
+        this.mineGrid [length] [width].setIsBomb(true);
     }
 
     private void initialiseGrid()
     {
-
         for (int x = 0; x < length; x++)
         {
             for (int y = 0; y < width; y++)
@@ -54,13 +55,42 @@ public class Grid {
     {
         for (int i = 0; i < 16; i++)
         {
-            int column = (int) (Math.random() * 9) + 1;
-            System.out.println("column" + column);
             int row = (int) (Math.random() * 9) + 1;
             System.out.println("row" + row);
-
-            //bombPlacingGrid.setCell(column, row, bombPlacingGrid.getCell(column, row).);
+            int column = (int) (Math.random() * 9) + 1;
+            System.out.println("column" + column);
+            setCell(column,row);
         }
     }
+    public void bombProximityCounter(int x,int y)
+        {
+            int[][] surroundings = {{1,1},{1,0},{1,-1},{0,-1},{-1,-1},{-1,0},{-1,1},{0,1}};
+            int bombCounter = 0;
+            for(int i = 0; i < surroundings.length; i++)
+            {
+                int[] testingCell = {x+surroundings[i][0],y+surroundings[i][1]};
+                if(testingCell[0]<0 || testingCell[1]<0 || testingCell[0]>=this.length || testingCell[1]>=this.width)
+                {
+                    continue;
+                }
+                if(getCell(testingCell[0],testingCell[1]).getIsBomb())
+                {
+                    bombCounter++;
+                }
+            }
+            getCell(x,y).surroundingBombs = bombCounter;
+        }
+
+    public void countThroughGrid()
+    {
+        for (int x = 0; x < length; x++)
+        {
+            for (int y = 0; y < width; y++)
+            {
+                bombProximityCounter(x,y);
+            }
+        }
+    }
+
 }
 
