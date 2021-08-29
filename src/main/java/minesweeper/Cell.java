@@ -31,12 +31,12 @@ public class Cell {
     {
         if (isBomb && uncovered)
         {
-            return ("X");
+            return (" X ");
         } else if (!isBomb && uncovered)
         {
-            return (Integer.toString(this.surroundingBombs));
+            return (" " + Integer.toString(this.surroundingBombs) + " ");
         } else {
-            return (".");
+            return (" . ");
         }
 
     }
