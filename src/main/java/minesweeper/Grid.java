@@ -56,9 +56,7 @@ public class Grid {
         for (int i = 0; i < 16; i++)
         {
             int row = (int) (Math.random() * 9) + 1;
-            System.out.println("row" + row);
             int column = (int) (Math.random() * 9) + 1;
-            System.out.println("column" + column);
             setCell(column,row);
         }
     }
